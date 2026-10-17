@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicBridge Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Flood emergency · Brisbane</p>
+          <h1>CivicBridge</h1>
+        </div>
+        <div class="incident-chip">
+          <span class="pulse"></span>
+          Sunnybank / Runcorn / South Brisbane / West End
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Demo views">
+        <button class="tab active" type="button" data-tab="resident">Resident View</button>
+        <button class="tab" type="button" data-tab="dashboard">Community Dashboard</button>
+        <button class="tab" type="button" data-tab="recovery">Recovery Guide</button>
+      </nav>
+
+      <main>
+        <section class="view active" id="resident" aria-labelledby="resident-title">
+          <section class="demo-intro">
+            <div>
+              <p class="eyebrow">Demo 1 · Before / During Disaster</p>
+              <h2>Risk-to-Action Translator + Real-World Map</h2>
+              <p>CivicBridge turns official emergency warnings into clear, local, multilingual action steps.</p>
+            </div>
+            <div class="translator-flow" aria-label="Warning translation flow">
+              <span>Official warning</span>
+              <strong>→</strong>
+              <span>What it means for me</span>
+              <strong>→</strong>
+              <span>What I do now</span>
+            </div>
+          </section>
+
+          <section class="barrier-panel" aria-label="CALD disaster vulnerability barriers">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow">Why this matters for CALD communities</p>
+                <h2>Warnings are only useful when people can understand, trust, and act on them.</h2>
+              </div>
+            </div>
+            <div class="barrier-grid">
+              <article class="barrier-card">
+                <span class="barrier-icon">01</span>
+                <h3>Language barriers</h3>
+                <p>Official wording can be hard to understand, especially during stress or when emergency terms have no direct translation.</p>
+                <strong>Demo response: Mandarin explanation, short English, and voice playback.</strong>
+              </article>
+              <article class="barrier-card">
+                <span class="barrier-icon">02</span>
+                <h3>Limited social networks</h3>
+                <p>New migrants and international students may not know who to ask for help, transport, or local emergency updates.</p>
+                <strong>Demo response: one-tap request goes to community support queue.</strong>
+              </article>
+              <article class="barrier-card">
+                <span class="barrier-icon">03</span>
+                <h3>Limited local risk knowledge</h3>
+                <p>People may not know which roads flood first, where the nearest safe place is, or when leaving becomes unsafe.</p>
+                <strong>Demo response: suburb-specific risk, closures, and nearest safe place.</strong>
+              </article>
+              <article class="barrier-card">
+                <span class="barrier-icon">04</span>
+                <h3>Reduced access to trusted information and services</h3>
+                <p>Support can be missed when messages are spread across unfamiliar agencies, platforms, and service systems.</p>
+                <strong>Demo response: official warning is turned into a guided support pathway.</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="scenario-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow">Demo scenario</p>
+                <h2>Chen family, Sunnybank: Mandarin-speaking household with no car</h2>
+              </div>
+            </div>
+            <div class="scenario-grid">
+              <article>
+                <span>Barrier</span>
+                <strong>They receive a complex flood warning but are unsure whether their street is affected.</strong>
+              </article>
+              <article>
+                <span>Risk</span>
+                <strong>Roads near creek crossings may close before they can arrange transport.</strong>
+              </article>
+              <article>
+                <span>Action needed</span>
+                <strong>Understand the warning, avoid unsafe roads, and request evacuation transport early.</strong>
+              </article>
+            </div>
+          </section>
+
+          <div class="resident-layout">
+            <section class="warning-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="eyebrow">Official flood warning received</p>
+                  <h2 id="resident-title">Major flood warning for low-lying Brisbane suburbs</h2>
+                </div>
+                <span class="severity high">High risk</span>
+              </div>
+
+              <div class="official-warning">
+                <span>Source message</span>
+                <p>Heavy rainfall is causing rapid creek and road flooding. Residents in low-lying areas should prepare to evacuate and avoid floodwater.</p>
+              </div>
+
+              <div class="profile-strip">
+                <div>
+                  <span>Demo resident</span>
+                  <strong>Chen family</strong>
+                </div>
+                <div>
+                  <span>Suburb</span>
+                  <strong>Sunnybank</strong>
+                </div>
+                <div>
+                  <span>Language</span>
+                  <strong>Mandarin</strong>
+                </div>
+                <div>
+                  <span>Situation</span>
+                  <strong>No car</strong>
+                </div>
+              </div>
+
+              <div class="meaning-card">
+                <p class="eyebrow">Plain-language explanation</p>
+                <h3>This means the Chen family may not be safe staying at home tonight.</h3>
+                <p>Sunnybank roads near creek crossings may close quickly. Because the family has no car, they should request evacuation transport before conditions worsen.</p>
+                <div class="translation-detail">
+                  <div>
+                    <span>Danger level</span>
+                    <strong>High</strong>
+                  </div>
+                  <div>
+                    <span>Area impact</span>
+                    <strong>Low-lying roads and creek crossings</strong>
+                  </div>
+                  <div>
+                    <span>Most important action</span>
+                    <strong>Request transport now</strong>
+                  </div>
+                </div>
+                <div class="voice-panel" aria-label="Multilingual voice guidance">
+                  <div>
+                    <p class="eyebrow">Voice guidance</p>
+                    <h3>English first, with multilingual support</h3>
+                    <p>Residents can hear the same action message in the language they understand best.</p>
+                  </div>
+                  <div class="language-options" id="language-options" role="group" aria-label="Choose voice language"></div>
+                  <div class="meaning-actions">
+                    <button class="voice-button" type="button" id="play-voice" aria-label="Play voice explanation">
+                      <span aria-hidden="true">▶</span>
+                      Play English
+                    </button>
+                    <span id="voice-status">English voice-ready explanation</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-output">
+                <div>
+                  <p class="eyebrow">Before</p>
+                  <p>“Residents in low-lying areas should prepare to evacuate and avoid floodwater.”</p>
+                </div>
+                <div>
+                  <p class="eyebrow">After</p>
+                  <p>“Your area may flood tonight. You do not have a car, so request transport now and do not use Mains Rd.”</p>
+                </div>
+              </div>
+
+              <div class="steps-grid">
+                <div class="step-list">
+                  <h3>Three action steps</h3>
+                  <ol>
+                    <li>Pack medicine, ID, phone charger, and essential baby or family items.</li>
+                    <li>Stay away from flooded roads and check the map for closures.</li>
+                    <li>Tap “I need transport” if you cannot reach the evacuation centre safely.</li>
+                  </ol>
+                </div>
+                <div class="step-list zh">
+                  <h3>中文行动建议</h3>
+                  <ol>
+                    <li>请准备好药物、证件、手机充电器和家人必需品。</li>
+                    <li>不要经过积水道路，请查看地图上的封路信息。</li>
+                    <li>如果无法安全到达避难中心，请点击“I need transport”。</li>
+                  </ol>
+                </div>
+              </div>
+            </section>
+
+            <aside class="map-panel" aria-label="Real-world flood map mock">
+              <div class="map-toolbar">
+                <span>Real-world map mock</span>
+                <strong>Sunnybank impact area</strong>
+              </div>
+              <div class="map-canvas resident-map">
+                <span class="river"></span>
+                <span class="road road-a"></span>
+                <span class="road road-b"></span>
+                <span class="road-closed closed-a">Mains Rd closed</span>
+                <span class="road-closed closed-b">Creek crossing closed</span>
+                <span class="flood-zone zone-a">Risk zone</span>
+                <span class="flood-zone zone-b">Rising water</span>
+                <span class="home-marker">Chen family home</span>
+                <span class="evac-marker">Evacuation centre</span>
+                <span class="safe-marker">Nearest safe place</span>
+              </div>
+              <div class="map-legend">
+                <span><i class="legend-box danger"></i> Risk area</span>
+                <span><i class="legend-line"></i> Road closure</span>
+                <span><i class="legend-dot safe"></i> Safe location</span>
+              </div>
+              <div class="map-summary">
+                <div>
+                  <span>User area impact</span>
+                  <strong>Sunnybank: high road flooding risk</strong>
+                </div>
+                <div>
+                  <span>Nearest safe location</span>
+                  <strong>Sunnybank Community Centre · 1.8 km</strong>
+                </div>
+                <div>
+                  <span>Route guidance</span>
+                  <strong>Avoid Mains Rd and creek crossing; use community transport pickup.</strong>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <section class="feedback-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow">Resident feedback</p>
+                <h2>Tell the support team what you need</h2>
+              </div>
+              <span class="consent">Consent to share: Yes</span>
+            </div>
+            <div class="feedback-actions" id="feedback-actions"></div>
+            <div class="request-result" id="request-result" role="status" aria-live="polite"></div>
+          </section>
+
+          <section class="data-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow">What happens after a resident taps a button</p>
+                <h2>The feedback becomes structured, shareable community response data.</h2>
+              </div>
+            </div>
+            <div class="data-flow">
+              <article>
+                <span>1</span>
+                <h3>Resident signal</h3>
+                <p>Chen family taps “I need transport” after reading the Mandarin explanation.</p>
+              </article>
+              <article>
+                <span>2</span>
+                <h3>Standard request</h3>
+                <p>The need is recorded as Transport, urgency High, status Pending, with consent to share.</p>
+              </article>
+              <article>
+                <span>3</span>
+                <h3>Community action</h3>
+                <p>The request appears in the dashboard so volunteers can assign a bilingual transport response.</p>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" id="dashboard" aria-labelledby="dashboard-title">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Community Dashboard</p>
+              <h2 id="dashboard-title">CALD flood response overview</h2>
+            </div>
+            <span class="timestamp">Updated 10:42 AM</span>
+          </div>
+
+          <section class="summary-grid" aria-label="Summary cards">
+            <article class="summary-card">
+              <span>Residents reached</span>
+              <strong>156</strong>
+            </article>
+            <article class="summary-card">
+              <span>Confirmed understanding</span>
+              <strong>68%</strong>
+            </article>
+            <article class="summary-card">
+              <span>Need language support</span>
+              <strong>23</strong>
+            </article>
+            <article class="summary-card urgent">
+              <span>Need transport</span>
+              <strong>9</strong>
+            </article>
+            <article class="summary-card urgent">
+              <span>Cannot evacuate</span>
+              <strong>6</strong>
+            </article>
+          </section>
+
+          <section class="dashboard-detail">
+            <div>
+              <p class="eyebrow">What the dashboard is tracking</p>
+              <h3>Understanding gaps and practical needs are separated.</h3>
+              <p>Some residents understand the warning but need transport, medicine, or shelter. Others need the message explained before they can act. The dashboard keeps those signals visible instead of treating outreach as a single broadcast.</p>
+            </div>
+            <div>
+              <p class="eyebrow">Why this helps responders</p>
+              <h3>Support can be targeted by suburb, language, need type, and urgency.</h3>
+              <p>Sunnybank shows Mandarin transport demand, while Runcorn shows residents who cannot evacuate. This helps community groups prioritise bilingual volunteers, rides, calls, and welfare checks.</p>
+            </div>
+          </section>
+
+          <div class="dashboard-layout">
+            <section class="dashboard-panel">
+              <div class="panel-header compact">
+                <h3>Community Understanding Map</h3>
+                <span>Brisbane focus suburbs</span>
+              </div>
+              <div class="map-canvas community-map">
+                <span class="river"></span>
+                <span class="road road-a"></span>
+                <span class="road road-b"></span>
+                <button class="map-marker sunnybank" type="button">Sunnybank<br />12 language support · 9 transport</button>
+                <button class="map-marker runcorn" type="button">Runcorn<br />6 cannot evacuate</button>
+                <button class="map-marker south-brisbane" type="button">South Brisbane<br />9 transport</button>
+                <button class="map-marker west-end" type="button">West End<br />4 medicine</button>
+              </div>
+            </section>
+
+            <section class="dashboard-panel">
+              <div class="panel-header compact">
+                <h3>Help Request Queue</h3>
+                <span id="queue-count">1 pending</span>
+              </div>
+              <div class="queue-table" role="table" aria-label="Help request queue">
+                <div class="queue-row queue-head" role="row">
+                  <span>Resident</span>
+                  <span>Suburb</span>
+                  <span>Language</span>
+                  <span>Need</span>
+                  <span>Urgency</span>
+                  <span>Status</span>
+                </div>
+                <div id="queue-body"></div>
+              </div>
+            </section>
+          </div>
+
+          <section class="suggested-action">
+            <p class="eyebrow">Suggested Action</p>
+            <p>High priority in Sunnybank: Mandarin-speaking residents need evacuation transport. Assign bilingual volunteers and coordinate rides to the nearest evacuation centre.</p>
+          </section>
+        </section>
+
+        <section class="view" id="recovery" aria-labelledby="recovery-title">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Recovery Guide</p>
+              <h2 id="recovery-title">After the request is received</h2>
+            </div>
+            <span class="severity medium">Support pathway</span>
+          </div>
+
+          <div class="recovery-grid">
+            <section class="recovery-stage active-stage">
+              <span>1</span>
+              <h3>Contact</h3>
+              <p>Mandarin-speaking volunteer calls the Chen family and confirms pickup details.</p>
+            </section>
+            <section class="recovery-stage">
+              <span>2</span>
+              <h3>Transport</h3>
+              <p>Community support coordinates a ride to the nearest evacuation centre.</p>
+            </section>
+            <section class="recovery-stage">
+              <span>3</span>
+              <h3>Settle</h3>
+              <p>Family receives translated centre information, food, water, and medicine checks.</p>
+            </section>
+            <section class="recovery-stage">
+              <span>4</span>
+              <h3>Follow up</h3>
+              <p>Status changes from Pending to Contacted, then Resolved once safe support is confirmed.</p>
+            </section>
+          </div>
+
+          <section class="recovery-detail">
+            <div>
+              <p class="eyebrow">Short-term support</p>
+              <ul>
+                <li>Confirm the family has transport and knows the pickup point.</li>
+                <li>Provide Mandarin instructions for evacuation centre registration.</li>
+                <li>Check medicine, food, water, phone charging, and child or elder needs.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow">After the flood peak</p>
+              <ul>
+                <li>Send translated return-home safety checks.</li>
+                <li>Connect the family with recovery payments and local support services.</li>
+                <li>Update the request status so community partners know the family is safe.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="recovery-request">
+            <p class="eyebrow">Linked resident request</p>
+            <pre id="request-json"></pre>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
