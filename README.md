@@ -36,18 +36,7 @@ text2sql-demo/
 ├── script.js      # Interactive behaviour (required by index.html)
 └── README.md      # Project documentation
 Note: The uploaded HTML references styles.css and script.js. Ensure both files are present in the repository before deploying. This README does not claim that a live AI model, official alert feed, real-time mapping service, or responder backend is connected.
-Run Locally
-1. Download or clone the repository.
-2. Keep index.html, styles.css, and script.js in the same directory.
-3. Open index.html in a browser to view the prototype.
-Publish with GitHub Pages
-1. Upload the website files to the repository's main branch.
-2. Open Settings → Pages.
-3. Under Build and deployment, select Deploy from a branch.
-4. Select main and /(root), then click Save.
-5. Wait for GitHub Pages to provide the published site URL.
-GitHub Pages hosts static websites. Any future server-side AI integration or private API credentials must be hosted and secured separately; never expose API keys in public client-side code.
-Product Perspective
+
 The prototype explores three connected design questions:
 - Accessibility: How can emergency information be understandable across language barriers?
 - Actionability: How can a warning help residents identify the next practical step?
